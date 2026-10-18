@@ -2350,3 +2350,117 @@ body.open-when-active {
     font-size: 14px;
   }
 }
+
+
+/* PERBAIKAN TAMPILAN HP */
+@media screen and (max-width: 768px) {
+  /* Header tetap berada di atas tanpa menutupi isi halaman */
+  .site-header {
+    position: relative;
+    top: auto;
+    z-index: 100;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Beri jarak aman dari header */
+  .page-shell {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 20px 14px 30px;
+    margin: 0 auto;
+  }
+
+  /* Judul tidak menempel pada bagian atas */
+  .hero {
+    margin-top: 10px;
+    padding-top: 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.7rem, 7vw, 2.4rem);
+    line-height: 1.35;
+    overflow-wrap: break-word;
+  }
+
+  .eyebrow {
+    display: block;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  /* Amplop menyesuaikan lebar layar */
+  .envelope-section {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+  }
+
+  .envelope-wrapper {
+    width: min(100%, 340px);
+    margin: 24px auto;
+  }
+
+  /* Surat tidak keluar dari layar HP */
+  .envelope-letter {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .letter-content {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .letter-content p {
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  /* Bagian buka saat */
+  .open-when-section {
+    margin-top: 35px;
+    padding-top: 10px;
+  }
+
+  .open-when-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .open-when-card {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  /* Navigasi bawah tidak melebar keluar layar */
+  .page-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .page-indicator {
+    text-align: center;
+  }
+}
+
+/* HP dengan layar sangat kecil */
+@media screen and (max-width: 380px) {
+  .page-shell {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .open-when-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 1.65rem;
+  }
+}
