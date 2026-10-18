@@ -174,6 +174,7 @@ function setupFloatingHearts() {
 // AMPLOP SURAT CINTA
 // =====================================
 
+
 function setupEnvelope() {
   const envelope = document.getElementById("envelope");
   const hint = document.getElementById("envelopeHint");
@@ -196,20 +197,40 @@ function setupEnvelope() {
       ? "Klik amplop lagi untuk menutup 💗"
       : "Klik amplop untuk membuka surat 💌";
 
+    if (shouldOpen) {
+      // Bawa amplop ke area yang terlihat di layar HP.
+      window.setTimeout(() => {
+        envelope.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }, 150);
+    }
+
     window.setTimeout(() => {
       isAnimating = false;
-    }, 1100);
+    }, 1000);
   }
 
-  envelope.addEventListener("click", toggleLetter);
+  envelope.addEventListener("click", (event) => {
+    // Jangan menutup surat saat pengguna menggulir atau
+    // memilih teks di dalam kertas surat.
+    if (event.target.closest(".envelope-letter")) return;
+
+    toggleLetter();
+  });
 
   envelope.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
+    if (
+      event.target === envelope &&
+      (event.key === "Enter" || event.key === " ")
+    ) {
       event.preventDefault();
       toggleLetter();
     }
   });
 }
+
 
 // =====================================
 // EFEK HATI, BUNGA, BINTANG, CONFETTI
