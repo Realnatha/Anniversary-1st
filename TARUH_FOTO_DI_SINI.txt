@@ -1,2 +1,0 @@
-Taruh foto kenangan di folder ini dengan nama foto1.jpg, foto2.jpg, foto3.jpg, dan seterusnya.
-Default proyek disetel untuk 30 foto. Jika memakai PNG/WebP, ubah PHOTO_EXTENSION di script.js.
