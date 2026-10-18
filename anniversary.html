@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hitung Hari Anniversary | Anniversary Kita</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="floatingLayer" class="floating-layer" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">♡ Our Little Story</a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" data-page="home">Beranda</a>
+        <a href="galeri.html" data-page="gallery">Galeri</a>
+        <a href="surat.html" data-page="letter">Surat Cinta</a>
+        <a href="kejutan.html" data-page="surprise">Kejutan</a>
+        <a href="anniversary.html" data-page="counter">Hitung Hari</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero">
+        <span class="eyebrow">Halaman 5 · Waktu yang kita lalui</span>
+        <h1>
+          Sudah berapa lama <span class="script-title">kita bersama?</span> ⏳
+        </h1>
+        <p>
+          Setiap detik adalah bagian dari cerita kita. Semoga masih banyak waktu
+          indah yang menunggu di depan.
+        </p>
+      </section>
+      <section class="card center section">
+        <div class="heart-icon">💞</div>
+        <h2>Waktu bersama</h2>
+        <p class="lead">Dihitung sejak 15 Oktober 2025</p>
+        <div class="counter-grid">
+          <div class="counter-box">
+            <span class="counter-value" id="days">0</span
+            ><span class="counter-label">Hari</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-value" id="hours">00</span
+            ><span class="counter-label">Jam</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-value" id="minutes">00</span
+            ><span class="counter-label">Menit</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-value" id="seconds">00</span
+            ><span class="counter-label">Detik</span>
+          </div>
+        </div>
+        <p class="lead" style="margin-top: 26px">
+          Satu hari demi satu hari, semoga kita terus memilih untuk saling
+          menghargai dan mendukung. ♡
+        </p>
+      </section>
+
+      <section class="personal-message">
+        <span class="personal-heart">♡</span>
+        <h2>Waktu Terus Berjalan</h2>
+        <p>
+          Hari-hari yang sudah kita lewati menjadi bagian dari perjalanan kita.
+          Aku berharap kita terus belajar, saling mendukung impian, dan
+          menghargai setiap waktu yang kita miliki. Semoga masih banyak cerita
+          indah menanti kita.
+        </p>
+        <span class="personal-signature"
+          >Satu tahun, dan cerita kita berlanjut 💕</span
+        >
+      </section>
+      G
+      <nav class="page-nav" aria-label="Navigasi halaman">
+        <a class="btn secondary" href="kejutan.html">← Kembali</a
+        ><span class="page-indicator">Halaman 5 dari 5</span
+        ><a class="btn" href="index.html">Ke Beranda →</a>
+      </nav>
+    </main>
+
+    <footer class="anniversary-footer">
+      <div class="footer-heart">♡</div>
+
+      <p class="footer-title">
+        Made with <span class="footer-love">♥</span> by
+        <span class="footer-name">Real Natha</span>
+      </p>
+
+      <p class="footer-message">Every moment with you is a beautiful memory.</p>
+
+      <div class="footer-divider">
+        <span></span>
+        <span class="footer-divider-heart">♥</span>
+        <span></span>
+      </div>
+
+      <p class="footer-copyright">
+        &copy; <span id="copyrightYear"></span>
+        <span class="footer-name">Real Natha</span>
+        <span class="footer-dot">•</span>
+        Made for Tika, with love.
+      </p>
+
+      <p class="footer-signature">
+        Our story, our memories, forever in my heart ♡
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById("copyrightYear").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

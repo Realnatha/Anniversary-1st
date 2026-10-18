@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kejutan Spesial 💗 | Anniversary Kita</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div id="floatingLayer" class="floating-layer" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">♡ Our Little Story</a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" data-page="home">Beranda</a>
+        <a href="galeri.html" data-page="gallery">Galeri</a>
+        <a href="surat.html" data-page="letter">Surat Cinta</a>
+        <a href="kejutan.html" data-page="surprise">Kejutan</a>
+        <a href="anniversary.html" data-page="counter">Hitung Hari</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero">
+        <span class="eyebrow"> Halaman 4 · A little surprise </span>
+
+        <h1>Kejutan <span class="script-title">untukmu</span> 💝</h1>
+
+        <p>
+          Aku punya sesuatu yang spesial untuk kamu. Semoga video kecil ini bisa
+          membuatmu tersenyum, sama seperti kamu yang selalu membuatku bahagia.
+          💗
+        </p>
+      </section>
+
+      <section class="video-surprise">
+        <!-- Pembukaan kejutan -->
+        <div class="surprise-opening" id="surpriseOpening">
+          <div class="surprise-glow"></div>
+
+          <div class="gift-heart" aria-hidden="true">💝</div>
+
+          <p class="surprise-eyebrow">A LITTLE GIFT FOR YOU</p>
+
+          <h2>
+            adaa kejutaannnn hehehe<br />
+            <span>jangann nangiss yaaa</span>
+          </h2>
+
+          <p class="surprise-description">
+            Aku sudah menyiapkan sesuatu dari hati. Buka, ya, sayangku. ❤️
+          </p>
+
+          <button
+            class="btn surprise-open-btn"
+            id="openVideoSurprise"
+            type="button"
+            aria-controls="surpriseContent"
+            aria-expanded="false"
+          >
+            Buka Kejutan 💗
+          </button>
+
+          <p class="surprise-small-text">Made with love, just for you ♡</p>
+        </div>
+
+        <!-- Isi kejutan: awalnya tersembunyi -->
+        <div class="surprise-content" id="surpriseContent" hidden>
+          <div class="reveal-message">
+            <span>♡</span>
+            <h2>Untuk kamu, kesayanganku</h2>
+            <p>
+              Kalau aku bisa mengulang waktu, aku tetap ingin bertemu dan
+              menjalani cerita ini bersamamu. Selamat anniversary, cintaku. 💗
+            </p>
+          </div>
+
+          <!-- VIDEO ANNIVERSARY -->
+          <section class="video-surprise">
+            <p class="video-eyebrow">OUR SPECIAL MOMENT ♡</p>
+
+            <h2 class="video-heading">Cerita Kita dalam Video 🎬</h2>
+
+            <p class="video-description">
+              Sebuah kenangan kecil yang bisa kamu tonton dan simpan kapan saja,
+              sayangku. ❤️
+            </p>
+
+            <div class="video-frame">
+              <video
+                id="anniversaryVideo"
+                controls
+                playsinline
+                preload="metadata"
+                poster="images/foto (1).jpeg"
+              >
+                <source src="video/video.mp4" type="video/mp4" />
+                Browser kamu tidak mendukung pemutaran video.
+              </video>
+            </div>
+
+            <p class="video-caption">
+              Setiap detik menyimpan cerita tentang kita 💗
+            </p>
+
+            <a
+              class="download-video-button"
+              href="video/video.mp4"
+              download="Anniversary-Real-Natha-dan-Tika.mp4"
+            >
+              <span aria-hidden="true">♡</span>
+              Unduh Video Anniversary
+              <span aria-hidden="true">↓</span>
+            </a>
+
+            <p class="download-video-note">
+              Simpan kenangan ini dan tonton kembali kapan pun kamu mau.
+            </p>
+          </section>
+
+          <div class="final-love-message">
+            <div class="final-heart">💗</div>
+
+            <h2>makasihhh yaa sayangkuuuu</h2>
+
+            <p>
+              terima kasihhh yaa sayangkuuu, karena kamuu sudahh hadirr di
+              dalamm hidupkuuu, akuu bersyuker bangett bisaa ketemuu samaa kamuu
+            </p>
+
+            <p>
+              semogaa cerita kita masihh bisaa berjalnjut sampekk selamanyaa,
+              sampek kitaa bisaa nikahhh, dan sampek kitaa bisaa tuaa barengggg,
+              sampek kitaa bisaa punya anakkkk, dan sampek kitaa bisaa bahagiaaa
+              selamanyaa, aamiin yaallah
+            </p>
+
+            <p class="final-signature">I love you, today and always. ❤️</p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="page-nav" aria-label="Navigasi halaman">
+        <a class="btn secondary" href="surat.html"> ← Kembali </a>
+
+        <span class="page-indicator"> Halaman 4 dari 5 </span>
+
+        <a href="anniversary.html" class="btn"> Lanjut ❤️ </a>
+      </nav>
+    </main>
+
+    <footer class="anniversary-footer">
+      <div class="footer-heart">♡</div>
+
+      <p class="footer-title">
+        Made with <span class="footer-love">♥</span> by
+        <span class="footer-name">Real Natha</span>
+      </p>
+
+      <p class="footer-message">Every moment with you is a beautiful memory.</p>
+
+      <div class="footer-divider">
+        <span></span>
+        <span class="footer-divider-heart">♥</span>
+        <span></span>
+      </div>
+
+      <p class="footer-copyright">
+        &copy; <span id="copyrightYear"></span>
+        <span class="footer-name">Real Natha</span>
+        <span class="footer-dot">•</span>
+        Made for Tika, with love.
+      </p>
+
+      <p class="footer-signature">
+        Our story, our memories, forever in my heart ♡
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById("copyrightYear").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

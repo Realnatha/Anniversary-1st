@@ -1,0 +1,2352 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap");
+:root {
+  --pink: #f58bb8;
+  --dark: #d94f8d;
+  --ink: #503343;
+  --muted: #8b6d7c;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  background:
+    radial-gradient(circle at 12% 8%, #ffcde2, transparent 30rem),
+    linear-gradient(145deg, #fff8fb, #ffeaf3 55%, #fff7fa);
+}
+.site-header {
+  width: min(1100px, calc(100% - 32px));
+  margin: 20px auto 0;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid white;
+  border-radius: 20px;
+  background: #ffffffb8;
+  box-shadow: 0 8px 30px #9c406c14;
+}
+.brand {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark);
+  text-decoration: none;
+}
+.header-note,
+.lead,
+.hero p {
+  color: var(--muted);
+}
+.page-shell {
+  width: min(1000px, calc(100% - 32px));
+  margin: auto;
+  padding: 35px 0;
+}
+.hero {
+  text-align: center;
+  padding: 25px 10px;
+}
+.eyebrow {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 99px;
+  background: #ffffffc9;
+  color: var(--dark);
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  line-height: 1.2;
+}
+h1 {
+  font-size: clamp(2.3rem, 6vw, 4.3rem);
+  margin: 18px 0 12px;
+}
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+.script-title {
+  color: var(--dark);
+  font-style: italic;
+}
+.hero p,
+.lead {
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+.card,
+.letter-paper {
+  background: #ffffffc9;
+  border: 1px solid white;
+  border-radius: 26px;
+  padding: clamp(22px, 4vw, 36px);
+  box-shadow: 0 18px 45px #9c406c24;
+}
+.center {
+  text-align: center;
+}
+.section {
+  margin: 26px 0;
+}
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 99px;
+  padding: 13px 22px;
+  background: linear-gradient(135deg, #f58bb8, #d94f8d);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px #d94f8d38;
+}
+.btn.secondary {
+  background: #fff;
+  color: var(--dark);
+  border: 1px solid #f6c4d9;
+  box-shadow: none;
+}
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 34px 0 10px;
+}
+.page-nav .btn {
+  min-width: 125px;
+  text-align: center;
+}
+.page-indicator,
+.footer {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+.footer {
+  padding: 24px 12px 36px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.mini-card {
+  padding: 22px;
+  background: #ffffffb8;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+.mini-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.heart-icon {
+  font-size: 2rem;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.gallery-card {
+  margin: 0;
+  padding: 8px;
+  background: #ffffffd1;
+  border: 1px solid white;
+  border-radius: 18px;
+}
+.gallery-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #ffe0ec;
+}
+.gallery-card figcaption {
+  text-align: center;
+  padding: 10px 5px 4px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.photo-missing {
+  display: grid;
+  place-items: center;
+  min-height: 170px;
+  padding: 15px;
+  text-align: center;
+  background: #ffe8f1;
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.letter-paper {
+  max-width: 760px;
+  margin: auto;
+  background: repeating-linear-gradient(#fffdfd, #fffdfd 37px, #fbe8ef 38px);
+  line-height: 2;
+}
+.signature {
+  color: var(--dark);
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+.counter-box {
+  padding: 24px 12px;
+  text-align: center;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 10px 25px #9c406c17;
+}
+.counter-value {
+  display: block;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--dark);
+  font-variant-numeric: tabular-nums;
+}
+.counter-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.surprise-message {
+  display: none;
+  margin-top: 24px;
+  padding: 25px;
+  border-radius: 22px;
+  background: white;
+  line-height: 1.8;
+}
+.surprise-message.show {
+  display: block;
+}
+.floating-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+.float-heart {
+  position: absolute;
+  bottom: -30px;
+  animation: float-up linear forwards;
+  opacity: 0.65;
+}
+@keyframes float-up {
+  to {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+@media (max-width: 760px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .header-note {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .counter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .page-nav .btn {
+    min-width: 0;
+    padding: 12px 15px;
+  }
+}
+
+/* ===== AMPLOP ANNIVERSARY PINK ELEGAN ===== */
+
+.envelope-section {
+  text-align: center;
+  padding: 20px 0 50px;
+}
+
+.envelope-wrapper {
+  position: relative;
+  width: min(350px, 88%);
+  height: 230px;
+  margin: 100px auto 35px;
+  perspective: 1200px;
+  isolation: isolate;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Bagian belakang amplop */
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffe2ed, #f5a4c5 55%, #e986b0);
+  box-shadow:
+    0 18px 35px #b94c7b24,
+    0 5px 12px #b94c7b12;
+  z-index: 1;
+}
+
+/* Kertas surat */
+.envelope-letter {
+  position: absolute;
+  left: 5%;
+  bottom: 8px;
+  width: 90%;
+  height: 195px;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #f2d6e1;
+  border-radius: 8px;
+  background: #fffdf8;
+  box-shadow: 0 5px 15px #9c406c12;
+  transform: translateY(0);
+  transform-origin: center bottom;
+  transition:
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.6s ease;
+  z-index: 2;
+  will-change: transform, height;
+}
+
+/* Isi surat */
+.letter-content {
+  min-height: 100%;
+  padding: 26px 21px;
+  color: #694454;
+  background: repeating-linear-gradient(
+    to bottom,
+    #fffdf8 0,
+    #fffdf8 31px,
+    #f8e6ed 32px
+  );
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.letter-content h2 {
+  margin: 0 0 24px;
+  color: #d94f8d;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  font-size: 1.55rem;
+}
+
+.letter-content p {
+  margin: 0 0 20px;
+}
+
+.letter-content .signature {
+  margin-top: 28px;
+  text-align: right;
+  color: #d94f8d;
+  font-weight: 700;
+}
+
+/* Tutup amplop berbentuk segitiga */
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #ffd3e4, #ee8eb5);
+  clip-path: polygon(0 0, 100% 0, 50% 59%);
+  transform: rotateX(0deg);
+  transform-origin: 50% 0%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 5;
+}
+
+/* Lipatan depan dengan detail dekoratif */
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffe5ef, #f8b6d1);
+  clip-path: polygon(0 0, 50% 59%, 100% 0, 100% 100%, 0 100%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Garis hiasan pada amplop */
+.envelope-front::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px solid #fff9fcbb;
+  border-radius: 8px;
+  clip-path: polygon(0 0, 50% 59%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Tulisan kecil di bagian depan */
+.envelope-front-text {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  width: 100%;
+  color: #a94e75;
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  font-style: italic;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* Hiasan bunga */
+.envelope-flower {
+  position: absolute;
+  bottom: 16px;
+  color: #d36b98;
+  font-size: 24px;
+  text-shadow: 0 2px 5px #b94c7b18;
+}
+
+.flower-left {
+  left: 25px;
+  transform: rotate(-18deg);
+}
+
+.flower-right {
+  right: 25px;
+  transform: rotate(18deg);
+}
+
+/* Segel hati di tengah */
+.envelope-seal {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  border: 2px solid #fff0f6;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #e9679c, #c93c78);
+  color: white;
+  font-size: 25px;
+  box-shadow:
+    0 4px 10px #9d285d35,
+    inset 0 1px 3px #ffffff65;
+  transform: translate(-50%, -50%);
+  transition:
+    opacity 0.3s ease,
+    transform 0.45s ease;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* Animasi saat amplop dibuka */
+.envelope-wrapper.opened .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-wrapper.opened .envelope-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.envelope-wrapper.opened .envelope-letter {
+  height: min(570px, 65vh);
+  min-height: 400px;
+  overflow-y: auto;
+  transform: translateY(-210px);
+  box-shadow: 0 18px 35px #9c406c25;
+  transition-delay: 0.15s;
+  z-index: 7;
+}
+
+/* Petunjuk klik */
+.envelope-hint {
+  margin: 18px auto;
+  color: #a65c7c;
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.envelope-wrapper:focus-visible {
+  outline: 3px solid #d94f8d;
+  outline-offset: 8px;
+  border-radius: 12px;
+}
+
+/* Tampilan HP */
+@media (max-width: 480px) {
+  .envelope-wrapper {
+    width: min(310px, 88%);
+    height: 210px;
+  }
+
+  .envelope-wrapper.opened .envelope-letter {
+    height: min(520px, 60vh);
+    min-height: 350px;
+    transform: translateY(-190px);
+  }
+
+  .letter-content {
+    padding: 22px 16px;
+  }
+
+  .letter-content h2 {
+    font-size: 1.35rem;
+  }
+
+  .envelope-front-text {
+    bottom: 22px;
+    font-size: 17px;
+  }
+}
+
+/* Kurangi animasi jika pengaturan perangkat memintanya */
+@media (prefers-reduced-motion: reduce) {
+  .envelope-flap,
+  .envelope-letter,
+  .envelope-seal {
+    transition-duration: 0.01ms;
+  }
+}
+
+/* ===== HALAMAN KEJUTAN VIDEO ===== */
+
+.video-surprise {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 10px 0 35px;
+}
+
+.video-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.video-heart {
+  display: inline-block;
+  color: #e879a9;
+  font-size: 38px;
+  animation: heartPulse 1.8s ease-in-out infinite;
+}
+
+.video-heading h2 {
+  margin: 8px 0 12px;
+  color: var(--dark);
+  font-family: "Playfair Display", serif;
+}
+
+.video-heading p {
+  max-width: 540px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.video-frame {
+  padding: 12px;
+  border: 1px solid #f4d6e4;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #fffafd, #ffe6f0);
+  box-shadow: 0 15px 40px #c45d8b1c;
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 14px;
+  background: #321e29;
+}
+
+.video-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 4px 2px;
+  color: var(--dark);
+  text-align: center;
+}
+
+.video-caption p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.video-caption span {
+  color: #e879a9;
+}
+
+.love-note {
+  position: relative;
+  margin: 28px 0;
+  padding: 28px 24px;
+  border: 1px solid #f5d8e5;
+  border-radius: 18px;
+  background: #fffafd;
+  text-align: center;
+  line-height: 1.9;
+  box-shadow: 0 8px 24px #c45d8b10;
+}
+
+.note-decoration {
+  font-size: 30px;
+}
+
+.love-note p {
+  color: var(--ink);
+}
+
+.love-note .note-signature {
+  margin-bottom: 0;
+  color: var(--dark);
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+
+@keyframes heartPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@media (max-width: 480px) {
+  .video-frame {
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .video-frame video {
+    border-radius: 10px;
+    max-height: 60vh;
+  }
+
+  .love-note {
+    padding: 22px 18px;
+  }
+
+  .video-caption {
+    gap: 7px;
+  }
+
+  .video-caption p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-heart {
+    animation: none;
+  }
+}
+
+/* ===== EFEK BUKA KEJUTAN ===== */
+
+.surprise-opening {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  max-width: 680px;
+  margin: 20px auto 45px;
+  padding: 55px 24px 45px;
+  border: 1px solid #f4cadd;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #fffafd, #ffe7f0, #fff3f8);
+  text-align: center;
+  box-shadow: 0 18px 55px #d65b9418;
+}
+
+.surprise-glow {
+  position: absolute;
+  z-index: -1;
+  top: -100px;
+  left: 50%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: #f8b3d255;
+  filter: blur(45px);
+  transform: translateX(-50%);
+  animation: surpriseGlow 4s ease-in-out infinite;
+}
+
+.gift-heart {
+  margin: 0 auto 20px;
+  font-size: clamp(65px, 12vw, 90px);
+  filter: drop-shadow(0 8px 15px #db5a952c);
+  animation: giftHeartbeat 2s ease-in-out infinite;
+}
+
+.surprise-eyebrow {
+  color: #c05b87;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.surprise-opening h2 {
+  margin: 18px 0;
+  color: #75455b;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.7rem, 5vw, 2.5rem);
+  line-height: 1.45;
+}
+
+.surprise-opening h2 span {
+  color: #d94f8d;
+  font-style: italic;
+}
+
+.surprise-description {
+  max-width: 420px;
+  margin: 0 auto 28px;
+  color: #8b6d7c;
+  line-height: 1.9;
+}
+
+.surprise-open-btn {
+  position: relative;
+  overflow: hidden;
+  min-width: 190px;
+  padding: 15px 28px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ed82ad, #d94f8d);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 9px 25px #d94f8d40;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.surprise-open-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 13px 30px #d94f8d50;
+}
+
+.surprise-open-btn:active {
+  transform: scale(0.97);
+}
+
+.surprise-small-text {
+  margin-top: 24px;
+  color: #b17b94;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Konten kejutan */
+
+.surprise-content[hidden] {
+  display: none !important;
+}
+
+.surprise-content {
+  animation: surpriseReveal 1.2s ease both;
+}
+
+.reveal-message,
+.final-love-message {
+  max-width: 650px;
+  margin: 35px auto;
+  text-align: center;
+}
+
+.reveal-message > span {
+  color: #e879a9;
+  font-size: 36px;
+}
+
+.reveal-message h2,
+.final-love-message h2 {
+  color: #d94f8d;
+  font-family: "Playfair Display", serif;
+}
+
+.reveal-message p,
+.final-love-message p {
+  color: #805d70;
+  line-height: 1.9;
+}
+
+.video-frame {
+  margin: 30px auto;
+  padding: 12px;
+  border: 1px solid #f3d0e0;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #fffafd, #ffe6f0);
+  box-shadow: 0 18px 45px #c45d8b20;
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  border-radius: 14px;
+  background: #321e29;
+}
+
+.video-caption {
+  padding: 15px 5px 5px;
+  color: #d94f8d;
+  text-align: center;
+  font-style: italic;
+}
+
+.final-love-message {
+  padding: 28px 24px;
+  border: 1px solid #f4d4e2;
+  border-radius: 22px;
+  background: #fffafd;
+  box-shadow: 0 10px 35px #c45d8b10;
+}
+
+.final-heart {
+  font-size: 48px;
+  animation: giftHeartbeat 2s ease-in-out infinite;
+}
+
+.final-signature {
+  margin-top: 25px;
+  color: #d94f8d !important;
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+/* Animasi */
+
+@keyframes giftHeartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.12);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes surpriseGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.15);
+  }
+}
+
+@keyframes surpriseReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .surprise-opening {
+    padding: 42px 18px 35px;
+    border-radius: 22px;
+  }
+
+  .video-frame {
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .video-frame video {
+    border-radius: 10px;
+  }
+
+  .final-love-message {
+    padding: 24px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gift-heart,
+  .surprise-glow,
+  .final-heart {
+    animation: none;
+  }
+
+  .surprise-content {
+    animation: none;
+  }
+}
+
+/* ==============================
+   EFEK PERAYAAN ANNIVERSARY
+============================== */
+
+.celebration-particle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: celebrationBurst var(--duration, 2.5s) ease-out forwards;
+}
+
+.celebration-heart {
+  font-size: var(--size, 24px);
+  filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.45));
+}
+
+.celebration-confetti {
+  width: 9px;
+  height: 15px;
+  border-radius: 3px;
+  background: var(--confetti-color, #ff80ab);
+}
+
+.celebration-star {
+  font-size: var(--size, 20px);
+  color: #ffd166;
+  text-shadow: 0 0 12px #fff0a8;
+}
+
+@keyframes celebrationBurst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--move-x)), calc(-50% + var(--move-y)))
+      scale(var(--end-scale, 1)) rotate(var(--rotation, 360deg));
+  }
+}
+
+/* Kilauan lembut di sekitar tombol kejutan */
+
+.surprise-open-btn {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 18px rgba(255, 105, 180, 0.25);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.surprise-open-btn:not(:disabled):hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.55);
+}
+
+/* Animasi hati pada ikon hadiah */
+
+.gift-heart {
+  animation: giftHeartbeat 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .celebration-particle {
+    animation-duration: 0.5s;
+  }
+
+  .gift-heart {
+    animation: none;
+  }
+
+  .surprise-open-btn {
+    transition: none;
+  }
+}
+
+/* ==============================
+   ROMANTIC ANNIVERSARY FOOTER
+============================== */
+
+.anniversary-footer {
+  position: relative;
+  overflow: hidden;
+  margin-top: 70px;
+  padding: 42px 20px 30px;
+  text-align: center;
+  background: linear-gradient(135deg, #fff0f6, #ffe1ec, #fff5f8);
+  border-top: 1px solid rgba(232, 76, 131, 0.2);
+  color: #875166;
+}
+
+.anniversary-footer::before,
+.anniversary-footer::after {
+  content: "♡";
+  position: absolute;
+  color: rgba(232, 76, 131, 0.12);
+  font-size: 100px;
+  pointer-events: none;
+  animation: footerFloat 5s ease-in-out infinite;
+}
+
+.anniversary-footer::before {
+  top: 5px;
+  left: 5%;
+  transform: rotate(-15deg);
+}
+
+.anniversary-footer::after {
+  right: 5%;
+  bottom: -20px;
+  animation-delay: 1.5s;
+}
+
+.footer-heart {
+  font-size: 35px;
+  color: #e84c83;
+  margin-bottom: 10px;
+  animation: footerHeartbeat 1.8s ease-in-out infinite;
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 10px;
+  letter-spacing: 0.4px;
+}
+
+.footer-love {
+  display: inline-block;
+  color: #e84c83;
+  animation: footerHeartbeat 1.2s ease-in-out infinite;
+}
+
+.footer-name {
+  color: #c52f68;
+  font-weight: 700;
+}
+
+.footer-message {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.8;
+  margin: 0 0 22px;
+  color: #a16b83;
+}
+
+.footer-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 220px;
+  margin: 0 auto 22px;
+}
+
+.footer-divider span:not(.footer-divider-heart) {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #e88aaa);
+}
+
+.footer-divider span:last-child {
+  transform: rotate(180deg);
+}
+
+.footer-divider-heart {
+  color: #e84c83;
+  font-size: 14px;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0 0 8px;
+  color: #946b7b;
+}
+
+.footer-dot {
+  color: #e84c83;
+  margin: 0 5px;
+}
+
+.footer-signature {
+  font-size: 11px;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  margin: 0;
+  color: #bd7894;
+}
+
+@keyframes footerHeartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes footerFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .anniversary-footer {
+    margin-top: 45px;
+    padding: 32px 16px 25px;
+  }
+
+  .footer-title {
+    font-size: 14px;
+  }
+
+  .footer-message {
+    font-size: 12px;
+  }
+
+  .footer-copyright {
+    font-size: 11px;
+  }
+
+  .footer-signature {
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-heart,
+  .footer-love,
+  .anniversary-footer::before,
+  .anniversary-footer::after {
+    animation: none;
+  }
+}
+
+/* =================================
+   SURAT CINTA - ANIMASI AMPLOP
+================================= */
+
+.letter-page {
+  min-height: 80vh;
+  padding: 55px 18px 35px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 190, 215, 0.25),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(255, 220, 232, 0.4),
+      transparent 35%
+    );
+}
+
+.letter-section {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.letter-eyebrow {
+  color: #d45b88;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.letter-heading {
+  color: #9d365d;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.25;
+  margin: 0 0 15px;
+}
+
+.letter-heading span {
+  color: #e45b91;
+  font-style: italic;
+}
+
+.letter-intro {
+  max-width: 460px;
+  margin: 0 auto;
+  color: #946b7b;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Ruang untuk kertas yang naik */
+
+.letter-scene {
+  position: relative;
+  padding-top: 360px;
+  padding-bottom: 35px;
+  margin: 5px auto 0;
+}
+
+/* Badan amplop */
+
+.envelope {
+  position: relative;
+  width: min(360px, 88vw);
+  height: 235px;
+  margin: 0 auto;
+  cursor: pointer;
+  perspective: 1000px;
+  -webkit-tap-highlight-color: transparent;
+  filter: drop-shadow(0 16px 20px rgba(167, 62, 103, 0.13));
+}
+
+.envelope:focus-visible {
+  outline: 3px solid #e45b91;
+  outline-offset: 8px;
+  border-radius: 12px;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #f8a9c5, #e982a8);
+}
+
+/* Kertas surat */
+
+.letter-paper {
+  position: absolute;
+  left: 4%;
+  bottom: 10px;
+  z-index: 2;
+  width: 92%;
+  max-height: 410px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 25px 22px 22px;
+  box-sizing: border-box;
+  border: 1px solid #f3d9e2;
+  border-radius: 5px;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.96),
+    rgba(255, 248, 250, 0.98)
+  );
+  color: #795260;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(0) scale(0.96);
+  transform-origin: bottom center;
+  transition:
+    transform 1s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.55s ease;
+  scrollbar-color: #e9a1bb #fff2f6;
+  scrollbar-width: thin;
+}
+
+.paper-decoration {
+  text-align: center;
+  color: #e45b91;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.paper-date {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #b77a91;
+  margin: 0 0 14px;
+}
+
+.letter-paper h2 {
+  color: #bd426f;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.letter-body {
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.letter-body p {
+  margin: 0 0 15px;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.letter-closing {
+  color: #bd426f;
+  font-weight: 600;
+}
+
+.letter-signature {
+  margin-top: 25px;
+  font-size: 13px;
+  line-height: 1.9;
+  text-align: right;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.letter-signature span {
+  display: block;
+  color: #d34d82;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 23px;
+  font-style: italic;
+}
+
+.paper-bottom-heart {
+  margin-top: 18px;
+  text-align: center;
+  color: #e45b91;
+}
+
+/* Bagian depan amplop */
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #f7b5cc, #e988aa);
+  clip-path: polygon(0 0, 50% 58%, 100% 0, 100% 100%, 0 100%);
+  transition: opacity 0.45s ease;
+}
+
+/* Tutup amplop */
+
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #fbd0df, #ef9cbb);
+  clip-path: polygon(0 0, 100% 0, 50% 60%);
+  transform-origin: top center;
+  transform: rotateX(0deg);
+  transition:
+    transform 0.7s ease,
+    z-index 0s 0.35s;
+  backface-visibility: visible;
+}
+
+/* Segel hati */
+
+.envelope-seal {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #e84c83, #bd285f);
+  color: #fff;
+  font-size: 21px;
+  box-shadow: 0 5px 12px rgba(157, 54, 93, 0.2);
+  transform: translate(-50%, -50%);
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s ease;
+}
+
+.envelope-hint {
+  margin: 0;
+  color: #bd6487;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  animation: envelopeHintPulse 2s ease-in-out infinite;
+}
+
+.letter-footer-note {
+  margin: 15px 0 0;
+  color: #bd7894;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* =================================
+   SAAT AMPLOP DIBUKA
+================================= */
+
+.envelope.opened .envelope-flap {
+  z-index: 1;
+  transform: rotateX(180deg);
+}
+
+.envelope.opened .envelope-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.4);
+}
+
+.envelope.opened .envelope-front {
+  opacity: 0.2;
+}
+
+.envelope.opened .letter-paper {
+  z-index: 7;
+  opacity: 1;
+  transform: translateY(-180px) scale(1);
+  transition:
+    transform 1s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.55s ease,
+    z-index 0s;
+}
+
+.envelope.opened .letter-body p {
+  animation: letterTextAppear 0.65s ease forwards;
+}
+
+.envelope.opened .letter-body p:nth-child(1) {
+  animation-delay: 0.35s;
+}
+
+.envelope.opened .letter-body p:nth-child(2) {
+  animation-delay: 0.65s;
+}
+
+.envelope.opened .letter-body p:nth-child(3) {
+  animation-delay: 0.95s;
+}
+
+.envelope.opened .letter-body p:nth-child(4) {
+  animation-delay: 1.25s;
+}
+
+.envelope.opened .letter-body p:nth-child(5) {
+  animation-delay: 1.55s;
+}
+
+.envelope.opened .letter-signature {
+  animation: letterTextAppear 0.8s ease 1.9s forwards;
+}
+
+.envelope.opened .envelope-hint {
+  animation: none;
+}
+
+@keyframes letterTextAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes envelopeHintPulse {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Tampilan HP */
+
+@media (max-width: 600px) {
+  .letter-page {
+    padding: 38px 14px 25px;
+  }
+
+  .letter-scene {
+    padding-top: 345px;
+  }
+
+  .envelope {
+    height: 210px;
+  }
+
+  .letter-paper {
+    max-height: 390px;
+    padding: 22px 16px;
+  }
+
+  .envelope.opened .letter-paper {
+    transform: translateY(-170px) scale(1);
+  }
+
+  .letter-paper h2 {
+    font-size: 22px;
+  }
+
+  .letter-body {
+    font-size: 12px;
+    line-height: 1.85;
+  }
+}
+
+/* Mengurangi animasi jika diminta perangkat */
+
+@media (prefers-reduced-motion: reduce) {
+  .letter-paper,
+  .envelope-flap,
+  .envelope-seal,
+  .envelope-front,
+  .letter-body p,
+  .letter-signature,
+  .envelope-hint {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .letter-body p,
+  .letter-signature {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* VIDEO ANNIVERSARY PORTRAIT */
+.video-surprise {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 16px;
+  box-sizing: border-box;
+}
+
+.video-frame {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 9 / 16;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 5px;
+  box-sizing: border-box;
+
+  background: linear-gradient(135deg, #ffb6d5, #ff5c98, #c92760);
+
+  box-shadow:
+    0 12px 35px rgba(217, 79, 141, 0.25),
+    0 0 0 6px rgba(255, 192, 215, 0.2);
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #1a0b12;
+  border-radius: 19px;
+}
+
+.video-caption {
+  margin-top: 22px;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* Tampilan HP */
+@media (max-width: 480px) {
+  .video-frame {
+    max-width: 300px;
+    border-radius: 20px;
+  }
+
+  .video-frame video {
+    border-radius: 15px;
+  }
+
+  .video-caption {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-surprise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+  }
+
+  .video-caption {
+    display: block !important;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #d94f8d;
+  }
+}
+
+/* ==============================
+   NAVIGASI WEBSITE ANNIVERSARY
+============================== */
+
+.site-header {
+  width: 100%;
+  min-height: 72px;
+  padding: 14px clamp(16px, 4vw, 48px);
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  position: relative;
+  z-index: 100;
+
+  background: rgba(255, 240, 246, 0.96);
+  border-bottom: 1px solid rgba(232, 76, 131, 0.18);
+}
+
+.brand {
+  color: #b92755;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.main-nav a {
+  display: inline-block;
+  padding: 10px 13px;
+  border-radius: 20px;
+
+  color: #71344d;
+  font-size: 14px;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #fff;
+  background: #e84c83;
+}
+
+.menu-toggle {
+  display: none;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid #f3b2cc;
+  border-radius: 12px;
+  background: #fff;
+  color: #b92755;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ==============================
+   TAMPILAN HP DAN TABLET
+============================== */
+
+@media (max-width: 760px) {
+  .site-header {
+    min-height: 64px;
+    padding: 10px 16px;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    padding-top: 8px;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .main-nav a {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+
+  main,
+  .letter-page,
+  .letter-section,
+  .video-surprise {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+  }
+
+  h1 {
+    overflow-wrap: anywhere;
+    font-size: clamp(26px, 7vw, 36px);
+  }
+
+  p {
+    overflow-wrap: break-word;
+  }
+}
+
+/* Hormati pengaturan pengurangan animasi */
+@media (prefers-reduced-motion: reduce) {
+  .main-nav a {
+    transition: none;
+  }
+}
+
+/* PESAN PERSONAL DI SETIAP HALAMAN */
+
+.personal-message {
+  width: min(100% - 32px, 680px);
+  box-sizing: border-box;
+  margin: 40px auto;
+  padding: clamp(22px, 5vw, 38px);
+
+  text-align: center;
+  background: linear-gradient(145deg, #fff7fa, #ffe5ef);
+  border: 1px solid #f8c4d8;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(185, 39, 85, 0.08);
+}
+
+.personal-heart {
+  display: block;
+  margin-bottom: 12px;
+  color: #e84c83;
+  font-size: 32px;
+}
+
+.personal-message h2 {
+  margin: 0 0 16px;
+  color: #b92755;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(22px, 5vw, 30px);
+  line-height: 1.35;
+}
+
+.personal-message p {
+  margin: 0;
+  color: #704455;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.personal-signature {
+  display: block;
+  margin-top: 20px;
+  color: #d94f8d;
+  font-family: "Playfair Display", serif;
+  font-size: 15px;
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .personal-message {
+    margin: 28px auto;
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  .personal-message p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+/* TOMBOL KEMBALI DAN LANJUT */
+
+.page-navigation {
+  width: min(100% - 32px, 680px);
+  margin: 35px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 11px 20px;
+  box-sizing: border-box;
+
+  color: #b92755;
+  background: #fff0f5;
+  border: 1px solid #f1b2cb;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.page-nav-button.next {
+  color: white;
+  background: #e84c83;
+  border-color: #e84c83;
+}
+
+.page-nav-button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .page-nav-button {
+    flex: 1;
+    padding: 11px 12px;
+    font-size: 13px;
+  }
+}
+
+/* =================================
+   FITUR BUKA SAAT - ANNIVERSARY
+================================= */
+
+.open-when-section {
+  width: min(100% - 32px, 900px);
+  margin: 55px auto;
+  padding: clamp(22px, 5vw, 42px);
+  box-sizing: border-box;
+  text-align: center;
+  background: linear-gradient(150deg, #fff8fb, #ffe9f1);
+  border: 1px solid #f8c5d8;
+  border-radius: 28px;
+  box-shadow: 0 14px 38px rgba(185, 39, 85, 0.08);
+}
+
+.open-when-eyebrow {
+  margin: 0 0 12px;
+  color: #d94f8d;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.open-when-heading {
+  margin: 0;
+  color: #b92755;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 6vw, 44px);
+  line-height: 1.3;
+}
+
+.open-when-heading span {
+  display: block;
+  margin-top: 8px;
+  color: #d94f8d;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.open-when-description {
+  max-width: 540px;
+  margin: 18px auto 30px;
+  color: #805568;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.open-when-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  text-align: center;
+}
+
+.open-when-card {
+  min-width: 0;
+  min-height: 190px;
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: 1px solid #f3bfd3;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 6px 18px rgba(185, 39, 85, 0.06);
+
+  font: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.open-when-card:hover {
+  transform: translateY(-5px);
+  background: #fff;
+  box-shadow: 0 12px 26px rgba(185, 39, 85, 0.13);
+}
+
+.open-when-card:focus-visible,
+.open-when-close:focus-visible,
+.open-when-done:focus-visible {
+  outline: 3px solid #b92755;
+  outline-offset: 4px;
+}
+
+.mini-envelope {
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  margin-bottom: 4px;
+  border-radius: 20px;
+  background: #fff0f6;
+  font-size: 35px;
+  transition: transform 0.25s ease;
+}
+
+.open-when-card:hover .mini-envelope {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+.open-when-title {
+  color: #a82f59;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.open-when-hint {
+  color: #d4779b;
+  font-size: 12px;
+}
+
+/* Latar belakang saat surat dibuka */
+.open-when-overlay[hidden] {
+  display: none !important;
+}
+
+.open-when-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(65, 22, 43, 0.65);
+  backdrop-filter: blur(7px);
+  overflow-y: auto;
+}
+
+.open-when-letter {
+  position: relative;
+  width: min(100%, 500px);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: clamp(26px, 6vw, 42px);
+
+  background: linear-gradient(160deg, #fffdf9, #fff0f5);
+  border: 1px solid #f4c2d5;
+  border-radius: 25px;
+  box-shadow: 0 25px 80px rgba(35, 10, 22, 0.25);
+
+  animation: openWhenAppear 0.35s ease both;
+}
+
+.open-when-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #ffe1ec;
+  color: #b92755;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.open-when-letter-icon {
+  display: block;
+  color: #e84c83;
+  font-size: 38px;
+}
+
+.open-when-letter-label {
+  margin: 10px 0;
+  color: #d4779b;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.open-when-letter h3 {
+  margin: 12px 0 22px;
+  color: #b92755;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(23px, 5vw, 30px);
+  line-height: 1.4;
+}
+
+.open-when-message {
+  color: #704455;
+  font-size: 15px;
+  line-height: 1.95;
+  text-align: left;
+}
+
+.open-when-message p {
+  margin: 0 0 16px;
+}
+
+.open-when-signature {
+  margin-top: 24px;
+  color: #805568;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.open-when-signature span {
+  color: #d94f8d;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-style: italic;
+}
+
+.open-when-done {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 25px;
+  background: #e84c83;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.open-when-done:hover {
+  background: #b92755;
+}
+
+@keyframes openWhenAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsif untuk HP */
+@media (max-width: 520px) {
+  .open-when-section {
+    margin: 30px auto;
+    padding: 24px 16px;
+    border-radius: 22px;
+  }
+
+  .open-when-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .open-when-card {
+    min-height: 145px;
+    padding: 18px 15px;
+    border-radius: 18px;
+  }
+
+  .mini-envelope {
+    width: 54px;
+    height: 54px;
+    font-size: 30px;
+  }
+
+  .open-when-overlay {
+    padding: 12px;
+  }
+
+  .open-when-letter {
+    max-height: calc(100dvh - 24px);
+    padding: 32px 22px 24px;
+    border-radius: 21px;
+  }
+
+  .open-when-message {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .open-when-card,
+  .mini-envelope,
+  .open-when-done {
+    transition: none;
+  }
+
+  .open-when-letter {
+    animation: none;
+  }
+}
+
+body.open-when-active {
+  overflow: hidden;
+}
+
+/* =================================
+   VIDEO ANNIVERSARY + TOMBOL UNDUH
+================================= */
+
+.video-surprise {
+  width: min(100% - 32px, 760px);
+  margin: 40px auto;
+  padding: clamp(22px, 5vw, 38px);
+  box-sizing: border-box;
+  text-align: center;
+
+  background: linear-gradient(145deg, #fff7fa, #ffe8f1);
+  border: 1px solid #f7c3d7;
+  border-radius: 26px;
+  box-shadow: 0 12px 35px rgba(217, 79, 141, 0.1);
+}
+
+.video-eyebrow {
+  margin: 0 0 12px;
+  color: #d94f8d;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.video-heading {
+  margin: 0;
+  color: #b92755;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(25px, 5vw, 36px);
+  line-height: 1.4;
+}
+
+.video-description {
+  max-width: 520px;
+  margin: 14px auto 26px;
+  color: #805568;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.video-frame {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 9 / 16;
+  margin: 0 auto;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #ffb6d5, #e84c83, #b92755);
+  border-radius: 24px;
+  box-shadow: 0 12px 32px rgba(185, 39, 85, 0.2);
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #1a0b12;
+  border-radius: 19px;
+}
+
+.video-caption {
+  margin: 20px auto;
+  color: #b92755;
+  font-family: "Playfair Display", serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.download-video-button {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 48px;
+  margin: 12px auto 0;
+  padding: 13px 22px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  color: #fff;
+  background: linear-gradient(135deg, #f58bb8, #d94f8d);
+  border: 1px solid #d94f8d;
+  border-radius: 28px;
+  box-shadow: 0 7px 18px rgba(217, 79, 141, 0.2);
+
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.download-video-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(217, 79, 141, 0.3);
+}
+
+.download-video-button:focus-visible {
+  outline: 3px solid #b92755;
+  outline-offset: 4px;
+}
+
+.download-video-note {
+  max-width: 380px;
+  margin: 13px auto 0;
+  color: #94677a;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+  .video-surprise {
+    margin: 26px auto;
+    padding: 22px 16px;
+    border-radius: 21px;
+  }
+
+  .video-frame {
+    max-width: min(100%, 300px);
+    border-radius: 20px;
+  }
+
+  .video-frame video {
+    border-radius: 15px;
+  }
+
+  .download-video-button {
+    width: 100%;
+    padding: 13px 14px;
+    font-size: 13px;
+  }
+
+  .video-caption {
+    font-size: 14px;
+  }
+}

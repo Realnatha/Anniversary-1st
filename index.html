@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beranda | Anniversary Kita</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="floatingLayer" class="floating-layer" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">♡ Our Little Story</a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" data-page="home">Beranda</a>
+        <a href="galeri.html" data-page="gallery">Galeri</a>
+        <a href="surat.html" data-page="letter">Surat Cinta</a>
+        <a href="kejutan.html" data-page="surprise">Kejutan</a>
+        <a href="anniversary.html" data-page="counter">Hitung Hari</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero">
+        <span class="eyebrow">15 Oktober 2025 — selamanya</span>
+        <h1>
+          Happy 1st Anniversary, <span class="script-title">Sayangku</span> 💗
+        </h1>
+        <p>
+          Terima kasih sudah menjadi bagian terindah dari ceritaku. Halaman
+          kecil ini menyimpan hal-hal yang ingin aku rayakan bersamamu.
+        </p>
+
+        <section class="personal-message">
+          <span class="personal-heart">♡</span>
+          <h2>Untuk Kamu, Kesayanganku</h2>
+          <p>
+            Selamat datang di cerita kecil kita. Aku membuat halaman ini untuk
+            mengenang setiap tawa, cerita, dan momen yang sudah kita lewati.
+            Semoga kamu selalu ingat betapa berharganya kehadiranmu dalam
+            hidupku.
+          </p>
+          <span class="personal-signature">Dari aku, dengan cinta ❤️</span>
+        </section>
+
+        <div class="action-row">
+          <a class="btn" href="galeri.html">Mulai perjalanan kita 💗</a>
+        </div>
+      </section>
+      <section class="card center section">
+        <div class="heart-icon">💗</div>
+        <h2>Untuk kita</h2>
+        <p class="lead">
+          Semoga kita selalu punya alasan untuk tertawa, saling mendukung, dan
+          terus tumbuh bersama. Tidak harus sempurna, yang penting kita terus
+          berusaha.
+        </p>
+      </section>
+      <section class="grid-3 section">
+        <article class="mini-card">
+          <div class="heart-icon">📸</div>
+          <h3>Galeri Foto</h3>
+          <p>Momen yang paling berharga dalam perjalanan kita.</p>
+        </article>
+        <article class="mini-card">
+          <div class="heart-icon">💌</div>
+          <h3>Surat Cinta</h3>
+          <p>Kata-kata dari hatiku buat kamuuuu.</p>
+        </article>
+        <article class="mini-card">
+          <div class="heart-icon">🎁</div>
+          <h3>Kejutan</h3>
+          <p>Pesan kecil untuk hari istimewa ini.</p>
+        </article>
+      </section>
+      <nav class="page-nav" aria-label="Navigasi halaman">
+        <span></span><span class="page-indicator">Halaman 1 dari 5</span
+        ><a class="btn" href="galeri.html">Lanjut →</a>
+      </nav>
+    </main>
+
+    <footer class="anniversary-footer">
+      <div class="footer-heart">♡</div>
+
+      <p class="footer-title">
+        Made with <span class="footer-love">♥</span> by
+        <span class="footer-name">Real Natha</span>
+      </p>
+
+      <p class="footer-message">Every moment with you is a beautiful memory.</p>
+
+      <div class="footer-divider">
+        <span></span>
+        <span class="footer-divider-heart">♥</span>
+        <span></span>
+      </div>
+
+      <p class="footer-copyright">
+        &copy; <span id="copyrightYear"></span>
+        <span class="footer-name">Real Natha</span>
+        <span class="footer-dot">•</span>
+        Made for Tika, with love.
+      </p>
+
+      <p class="footer-signature">
+        Our story, our memories, forever in my heart ♡
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById("copyrightYear").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

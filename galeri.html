@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Galeri Foto | Anniversary Kita</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="floatingLayer" class="floating-layer" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">♡ Our Little Story</a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" data-page="home">Beranda</a>
+        <a href="galeri.html" data-page="gallery">Galeri</a>
+        <a href="surat.html" data-page="letter">Surat Cinta</a>
+        <a href="kejutan.html" data-page="surprise">Kejutan</a>
+        <a href="anniversary.html" data-page="counter">Hitung Hari</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero">
+        <span class="eyebrow">Halaman 2 · Foto kenangan</span>
+        <h1>Galeri <span class="script-title">kenangan kita</span> 📸</h1>
+        <p>
+          Ini adalah momen momen yang ga pernah kulupakan selama 1 tahun inii
+        </p>
+      </section>
+
+      <section class="personal-message">
+        <span class="personal-heart">♡</span>
+        <h2>Setiap Foto Punya Cerita</h2>
+        <p>
+          Mungkin bagi orang lain ini hanya foto biasa, tetapi bagiku setiap
+          foto menyimpan kenangan. Aku ingin kita terus membuat cerita baru,
+          mengambil lebih banyak foto, dan memiliki lebih banyak alasan untuk
+          tersenyum bersama.
+        </p>
+        <span class="personal-signature">Kenangan kita, selamanya 💗</span>
+      </section>
+
+      <section class="card section">
+        <div
+          id="galleryGrid"
+          class="gallery-grid"
+          aria-label="Galeri foto kenangan"
+        ></div>
+      </section>
+      <nav class="page-nav" aria-label="Navigasi halaman">
+        <a class="btn secondary" href="index.html">← Kembali</a
+        ><span class="page-indicator">Halaman 2 dari 5</span
+        ><a class="btn" href="surat.html">Lanjut →</a>
+      </nav>
+    </main>
+
+    <footer class="anniversary-footer">
+      <div class="footer-heart">♡</div>
+
+      <p class="footer-title">
+        Made with <span class="footer-love">♥</span> by
+        <span class="footer-name">Real Natha</span>
+      </p>
+
+      <p class="footer-message">Every moment with you is a beautiful memory.</p>
+
+      <div class="footer-divider">
+        <span></span>
+        <span class="footer-divider-heart">♥</span>
+        <span></span>
+      </div>
+
+      <p class="footer-copyright">
+        &copy; <span id="copyrightYear"></span>
+        <span class="footer-name">Real Natha</span>
+        <span class="footer-dot">•</span>
+        Made for Tika, with love.
+      </p>
+
+      <p class="footer-signature">
+        Our story, our memories, forever in my heart ♡
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById("copyrightYear").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
