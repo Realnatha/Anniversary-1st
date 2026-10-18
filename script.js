@@ -13,14 +13,14 @@ const TOTAL_PHOTOS = 48;
 
 function photoSources(n) {
   return [
-    `images/foto (${n}).jpeg`,
-    `images/foto (${n}).jpg`,
-    `images/foto${n}.jpeg`,
-    `images/foto${n}.jpg`,
-    `images/foto (${n}).png`,
-    `images/foto${n}.png`,
-    `images/foto (${n}).webp`,
-    `images/foto${n}.webp`,
+    `images/Foto (${n}).jpeg`,
+    `images/Foto (${n}).jpg`,
+    `images/Foto${n}.jpeg`,
+    `images/Foto${n}.jpg`,
+    `images/Foto (${n}).png`,
+    `images/Foto${n}.png`,
+    `images/Foto (${n}).webp`,
+    `images/Foto${n}.webp`,
   ];
 }
 
