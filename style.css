@@ -2491,3 +2491,20 @@ body.open-when-active {
     margin-top: 10px;
   }
 }
+
+
+/* Header tidak menutupi konten */
+.site-header {
+  position: relative;
+  z-index: 20;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    margin-top: 12px;
+  }
+
+  .page-shell {
+    padding-top: 15px;
+  }
+}
