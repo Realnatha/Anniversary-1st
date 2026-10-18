@@ -315,13 +315,29 @@ h2 {
   z-index: 1;
 }
 
-/* Kertas surat */
+
+/* ===== PERBAIKAN AMPLOP UNTUK HP ===== */
+
+.envelope-wrapper {
+  position: relative;
+  width: min(350px, 88%);
+  height: 230px;
+  margin: 100px auto 35px;
+  perspective: 1200px;
+  isolation: isolate;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Kertas surat saat tertutup */
 .envelope-letter {
   position: absolute;
   left: 5%;
   bottom: 8px;
   width: 90%;
   height: 195px;
+  max-height: 65vh;
   overflow: hidden;
   padding: 0;
   border: 1px solid #f2d6e1;
@@ -331,17 +347,15 @@ h2 {
   transform: translateY(0);
   transform-origin: center bottom;
   transition:
-    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
-    height 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s ease,
+    height 0.8s ease,
     box-shadow 0.6s ease;
   z-index: 2;
-  will-change: transform, height;
 }
 
 /* Isi surat */
 .letter-content {
-  min-height: 100%;
-  padding: 26px 21px;
+  padding: 22px 18px;
   color: #694454;
   background: repeating-linear-gradient(
     to bottom,
@@ -349,156 +363,90 @@ h2 {
     #fffdf8 31px,
     #f8e6ed 32px
   );
-  line-height: 1.9;
+  line-height: 1.8;
   overflow-wrap: anywhere;
   text-align: left;
 }
 
 .letter-content h2 {
-  margin: 0 0 24px;
+  margin: 0 0 20px;
   color: #d94f8d;
   font-family: "Playfair Display", serif;
   text-align: center;
-  font-size: 1.55rem;
+  font-size: 1.4rem;
 }
 
 .letter-content p {
-  margin: 0 0 20px;
+  margin: 0 0 18px;
 }
 
-.letter-content .signature {
-  margin-top: 28px;
-  text-align: right;
-  color: #d94f8d;
-  font-weight: 700;
+/* Saat amplop dibuka, surat naik di atas amplop */
+.envelope-wrapper.opened .envelope-letter {
+  height: min(650px, 70vh);
+  min-height: 0;
+  max-height: 70vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translateY(-190px);
+  box-shadow: 0 18px 35px #9c406c25;
+  transition-delay: 0.1s;
+  z-index: 7;
 }
 
-/* Tutup amplop berbentuk segitiga */
-.envelope-flap {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(145deg, #ffd3e4, #ee8eb5);
-  clip-path: polygon(0 0, 100% 0, 50% 59%);
-  transform: rotateX(0deg);
-  transform-origin: 50% 0%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 5;
+/* Lapisan amplop tetap di bawah surat */
+.envelope-wrapper.opened .envelope-back {
+  z-index: 1;
 }
 
-/* Lipatan depan dengan detail dekoratif */
-.envelope-front {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  background: linear-gradient(145deg, #ffe5ef, #f8b6d1);
-  clip-path: polygon(0 0, 50% 59%, 100% 0, 100% 100%, 0 100%);
+.envelope-wrapper.opened .envelope-front {
   z-index: 4;
   pointer-events: none;
 }
 
-/* Garis hiasan pada amplop */
-.envelope-front::before {
-  content: "";
-  position: absolute;
-  inset: 9px;
-  border: 1px solid #fff9fcbb;
-  border-radius: 8px;
-  clip-path: polygon(0 0, 50% 59%, 100% 0, 100% 100%, 0 100%);
-}
-
-/* Tulisan kecil di bagian depan */
-.envelope-front-text {
-  position: absolute;
-  bottom: 24px;
-  left: 0;
-  width: 100%;
-  color: #a94e75;
-  font-family: "Playfair Display", serif;
-  font-size: 19px;
-  font-style: italic;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-/* Hiasan bunga */
-.envelope-flower {
-  position: absolute;
-  bottom: 16px;
-  color: #d36b98;
-  font-size: 24px;
-  text-shadow: 0 2px 5px #b94c7b18;
-}
-
-.flower-left {
-  left: 25px;
-  transform: rotate(-18deg);
-}
-
-.flower-right {
-  right: 25px;
-  transform: rotate(18deg);
-}
-
-/* Segel hati di tengah */
-.envelope-seal {
-  position: absolute;
-  top: 43%;
-  left: 50%;
-  display: grid;
-  place-items: center;
-  width: 47px;
-  height: 47px;
-  border: 2px solid #fff0f6;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #e9679c, #c93c78);
-  color: white;
-  font-size: 25px;
-  box-shadow:
-    0 4px 10px #9d285d35,
-    inset 0 1px 3px #ffffff65;
-  transform: translate(-50%, -50%);
-  transition:
-    opacity 0.3s ease,
-    transform 0.45s ease;
-  z-index: 6;
-  pointer-events: none;
-}
-
-/* Animasi saat amplop dibuka */
 .envelope-wrapper.opened .envelope-flap {
-  transform: rotateX(180deg);
+  z-index: 5;
+  pointer-events: none;
 }
 
 .envelope-wrapper.opened .envelope-seal {
   opacity: 0;
-  transform: translate(-50%, -50%) scale(0.5);
-}
-
-.envelope-wrapper.opened .envelope-letter {
-  height: min(570px, 65vh);
-  min-height: 400px;
-  overflow-y: auto;
-  transform: translateY(-210px);
-  box-shadow: 0 18px 35px #9c406c25;
-  transition-delay: 0.15s;
-  z-index: 7;
-}
-
-/* Petunjuk klik */
-.envelope-hint {
-  margin: 18px auto;
-  color: #a65c7c;
-  font-size: 0.95rem;
   pointer-events: none;
 }
 
-.envelope-wrapper:focus-visible {
-  outline: 3px solid #d94f8d;
-  outline-offset: 8px;
-  border-radius: 12px;
+/* Penyesuaian HP */
+@media (max-width: 480px) {
+  .envelope-section {
+    padding-top: 15px;
+    padding-bottom: 35px;
+  }
+
+  .envelope-wrapper {
+    width: min(310px, 88vw);
+    height: 210px;
+    margin: 100px auto 35px;
+  }
+
+  .envelope-wrapper.opened .envelope-letter {
+    height: 65vh;
+    max-height: 65vh;
+    transform: translateY(-175px);
+  }
+
+  .letter-content {
+    padding: 20px 15px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .letter-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .envelope-hint {
+    margin-top: 20px;
+    line-height: 1.7;
+  }
+}
 }
 
 /* Tampilan HP */
