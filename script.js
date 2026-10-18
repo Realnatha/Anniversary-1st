@@ -88,7 +88,8 @@ function setupGallery() {
     caption.textContent = `Kenangan kita #${n}`;
 
     // Format nama file: foto (1).jpeg, foto (2).jpeg, dst.
-    img.src = `images/foto%20(${n}).jpeg`;
+   
+img.src = `images/Foto%20(${n}).jpeg`;
 
     // Jika file tidak ditemukan, tampilkan pesan yang jelas
     img.onerror = function () {
