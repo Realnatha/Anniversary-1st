@@ -68,13 +68,10 @@ function setupCounter() {
 // =====================================
 
 
+
 function setupGallery() {
   const grid = document.getElementById("galleryGrid");
-
-  if (!grid) {
-    console.warn("Elemen galleryGrid tidak ditemukan.");
-    return;
-  }
+  if (!grid) return;
 
   grid.replaceChildren();
 
@@ -92,30 +89,28 @@ function setupGallery() {
     const sources = photoSources(n);
     let index = 0;
 
-    img.addEventListener("error", function handleError() {
+    img.onerror = function () {
       index++;
 
       if (index < sources.length) {
         img.src = sources[index];
       } else {
-        img.removeEventListener("error", handleError);
+        img.onerror = null;
+        img.alt = `Foto ${n} tidak ditemukan`;
+        img.style.display = "none";
 
         const message = document.createElement("p");
         message.className = "photo-missing";
-        message.textContent =
-          `Foto ${n} tidak ditemukan. Periksa nama file dan folder images.`;
-
-        img.replaceWith(message);
+        message.textContent = `Foto ${n} tidak ditemukan.`;
+        figure.insertBefore(message, caption);
       }
-    });
+    };
 
-    img.src = sources[index];
+    img.src = sources[0];
 
     figure.append(img, caption);
     grid.appendChild(figure);
   }
-
-  console.log("Galeri berhasil dibuat:", TOTAL_PHOTOS, "slot foto.");
 }
 
 
