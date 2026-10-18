@@ -67,14 +67,15 @@ function setupCounter() {
 // GALERI FOTO
 // =====================================
 
-
-
 function setupGallery() {
   const grid = document.getElementById("galleryGrid");
+
+  // Berhenti jika halaman tidak memiliki galeri
   if (!grid) return;
 
   grid.replaceChildren();
 
+  // Jumlah foto sesuai proyek anniversary
   for (let n = 1; n <= TOTAL_PHOTOS; n++) {
     const figure = document.createElement("figure");
     figure.className = "gallery-card";
@@ -86,32 +87,26 @@ function setupGallery() {
     const caption = document.createElement("figcaption");
     caption.textContent = `Kenangan kita #${n}`;
 
-    const sources = photoSources(n);
-    let index = 0;
+    // Format nama file: foto (1).jpeg, foto (2).jpeg, dst.
+    img.src = `images/foto%20(${n}).jpeg`;
 
+    // Jika file tidak ditemukan, tampilkan pesan yang jelas
     img.onerror = function () {
-      index++;
+      img.onerror = null;
 
-      if (index < sources.length) {
-        img.src = sources[index];
-      } else {
-        img.onerror = null;
-        img.alt = `Foto ${n} tidak ditemukan`;
-        img.style.display = "none";
+      const message = document.createElement("p");
+      message.className = "photo-missing";
+      message.textContent =
+        `Foto ${n} tidak ditemukan. Periksa nama dan lokasi file.`;
 
-        const message = document.createElement("p");
-        message.className = "photo-missing";
-        message.textContent = `Foto ${n} tidak ditemukan.`;
-        figure.insertBefore(message, caption);
-      }
+      img.replaceWith(message);
     };
-
-    img.src = sources[0];
 
     figure.append(img, caption);
     grid.appendChild(figure);
   }
 }
+
 
 
 // =====================================
