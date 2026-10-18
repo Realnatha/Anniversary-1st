@@ -2464,3 +2464,82 @@ body.open-when-active {
     font-size: 1.65rem;
   }
 }
+
+
+/* FIX AMPLOP DAN HEADER PADA LAYAR HP */
+@media screen and (max-width: 768px) {
+  /* Header tidak menutupi konten saat halaman digulir */
+  .site-header {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  /* Pastikan halaman memiliki ruang yang cukup */
+  .page-shell {
+    padding-top: 20px !important;
+    overflow: visible;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+  }
+
+  /* Beri ruang untuk animasi amplop */
+  .envelope-section {
+    position: relative;
+    z-index: 2;
+    margin-top: 25px;
+    padding-top: 10px;
+    overflow: visible;
+  }
+
+  .envelope-wrapper {
+    position: relative;
+    width: min(88vw, 340px);
+    height: 230px;
+    margin: 100px auto 55px;
+    overflow: visible;
+  }
+
+  /* Surat tidak boleh terpotong oleh amplop */
+  .envelope-letter {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    max-height: 55vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .letter-content {
+    box-sizing: border-box;
+    padding: 18px;
+    overflow-wrap: anywhere;
+  }
+
+  .letter-content p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Bagian depan amplop berada di bawah surat */
+  .envelope-front {
+    z-index: 4;
+  }
+
+  .envelope-flap {
+    z-index: 5;
+  }
+
+  .envelope-seal {
+    z-index: 6;
+  }
+
+  .envelope-hint {
+    position: relative;
+    margin-top: 10px;
+  }
+}
