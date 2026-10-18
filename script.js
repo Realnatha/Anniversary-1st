@@ -67,10 +67,14 @@ function setupCounter() {
 // GALERI FOTO
 // =====================================
 
+
 function setupGallery() {
   const grid = document.getElementById("galleryGrid");
 
-  if (!grid) return;
+  if (!grid) {
+    console.warn("Elemen galleryGrid tidak ditemukan.");
+    return;
+  }
 
   grid.replaceChildren();
 
@@ -82,33 +86,38 @@ function setupGallery() {
     img.alt = `Kenangan kita ${n}`;
     img.loading = "lazy";
 
+    const caption = document.createElement("figcaption");
+    caption.textContent = `Kenangan kita #${n}`;
+
     const sources = photoSources(n);
     let index = 0;
 
-    img.onerror = function () {
+    img.addEventListener("error", function handleError() {
       index++;
 
       if (index < sources.length) {
         img.src = sources[index];
       } else {
-        const missing = document.createElement("div");
+        img.removeEventListener("error", handleError);
 
-        missing.className = "photo-missing";
-        missing.textContent = `Foto ${n} belum ditemukan. Periksa folder images.`;
+        const message = document.createElement("p");
+        message.className = "photo-missing";
+        message.textContent =
+          `Foto ${n} tidak ditemukan. Periksa nama file dan folder images.`;
 
-        img.replaceWith(missing);
+        img.replaceWith(message);
       }
-    };
+    });
 
-    img.src = sources[0];
-
-    const caption = document.createElement("figcaption");
-    caption.textContent = `Kenangan kita #${n}`;
+    img.src = sources[index];
 
     figure.append(img, caption);
     grid.appendChild(figure);
   }
+
+  console.log("Galeri berhasil dibuat:", TOTAL_PHOTOS, "slot foto.");
 }
+
 
 // =====================================
 // TOMBOL KEJUTAN BIASA
